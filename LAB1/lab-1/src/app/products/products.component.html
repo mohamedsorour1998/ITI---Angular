@@ -1,0 +1,29 @@
+<div>
+  <h1>{{ StoreName }}</h1>
+  <img [src]="StoreLogo" alt="Store Logo" />
+  <h3>We offer an explicit discount of: {{ Discount }}</h3>
+  <h4>Welcome {{ ClientName }}!</h4>
+  <ul>
+    <li *ngFor="let category of CategoryList">{{ category.Name }}</li>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of ProductList">
+        <td>{{ product.ID }}</td>
+        <td>{{ product.Name }}</td>
+        <td>{{ product.Quantity }}</td>
+        <td>{{ product.Price }}</td>
+        <td><img [src]="product.Img" alt="{{ product.Name }} Image" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
