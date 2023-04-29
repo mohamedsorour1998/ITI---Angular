@@ -1,0 +1,27 @@
+Lab assignments:
+--------------
+1-Make a folder name it services.
+
+2-Make a service name it ProductService inside services folder then add two functions inside it 
+   a-GetAllProducts() that return all the products
+   b-GetProductById(prdId) that return the product with the specified id that passed as parameter.
+     With the following validatations
+     -If there is no product with the specified id return null;
+     -If the data that are passsed not number return null;
+
+3-In your app componemt include the product component you made before so that the product component become child 
+   in the app component.
+
+4-In the product  component make  a method name it renderValues() inside this function make a call  to the ProductService functions getAllProducts() 
+    and intialize the returned value to your properties. 
+
+5-In the app component make a button display data when click on it will call the renderValues method of the child. (viewchild)
+
+note :- in this logic you may use ngIf structural directive to make the table f products hidden first then when click on the button from parent make its value changes
+
+
+bouns:-
+--------
+Search for subject behaviour service.
+   -what it do?
+   - make a demo about it (big bouns)
