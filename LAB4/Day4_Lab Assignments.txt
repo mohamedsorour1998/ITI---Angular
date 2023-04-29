@@ -1,0 +1,26 @@
+lab_assignments
+-------------------
+1-In your project in the header
+    -make a navigation items (home , products , users , posts)
+    -home page must navigate to the home page 
+    -products page must navigate to the products page that contain list of products
+    -users page contain list of user in cards (name,username,email) from the api https://jsonplaceholder.typicode.com/users
+    -posts contain list of posts in cards  (id,title,body) from the following service https://jsonplaceholder.typicode.com/posts
+    
+ notes:
+--------
+   - header and footer must be in all pages
+   - you must use bootstrap
+   - you must use complex types in castiong with observer (IPost , IUser)
+   - you must handle errors in http
+   - you must make calling of http in services
+
+
+    - in the posts component make a button view post comments if clicked on it redirect to comments page with the
+      post id and render the related comments of this post from the following service
+      https://jsonplaceholder.typicode.com/posts/1/comments 
+      the previous called the api with the id is 1 of the post
+
+    - in your product page make two buttons (Products with discount and product without discounts)
+    if you click in any button of them you must navigate to it in the same product page (child routes)
+   
