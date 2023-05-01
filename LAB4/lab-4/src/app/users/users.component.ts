@@ -8,19 +8,20 @@ import { UserService } from '../Services/user.service';
   styleUrls: ['./users.component.scss'],
 })
 export class UsersComponent implements OnInit {
-  UserList: IUser[] = [];
+  users: IUser[] = [];
 
   constructor(private userService: UserService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.userService.getAllUsers().subscribe(
-      (response) => {
-        console.log('Received response:', response);
-        this.UserList = response;
-        console.log('UserList:', this.UserList);
-      },
-      (err) => {
-        console.log(err);
+      (users: IUser[]) => {
+        console.log(users);
+        this.users = users;
+        console.log("hi from users")
+        console.log(this.users);
+        },
+      (error: any) => {
+        console.error(error);
       }
     );
   }

@@ -7,9 +7,17 @@ import { IUser } from '../Shared Classes and types/sct';
   providedIn: 'root',
 })
 export class UserService {
-  private url: string = 'https://jsonplaceholder.typicode.com/users';
-  constructor(private http: HttpClient) {}
+
+  private readonly apiUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  constructor(private http: HttpClient) { }
+
   getAllUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.url);
+    return this.http.get<IUser[]>(this.apiUrl);
   }
+
+  getUserById(id: number): Observable<IUser> {
+    return this.http.get<IUser>(`${this.apiUrl}/${id}`);
+  }
+
 }

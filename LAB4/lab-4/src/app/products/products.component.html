@@ -10,13 +10,17 @@
   <!-- directive *ngIf). -->
   <ng-template #Discount>
     <h3>
-      We offer an explicit discount of: {{ CurrentDiscount | discount}}, use it dear
-      {{ ClientName }} !
+      We offer an explicit discount of: {{ CurrentDiscount | discount }}, use it
+      dear {{ ClientName }} !
     </h3>
   </ng-template>
 
   <div *ngIf="Discount !== DiscountOffer.NoDiscount; then Discount"></div>
-
+  <div>
+    <button routerLink="./with-discount">Products with Discount</button>
+    <button routerLink="./without-discount">Products without Discount</button>
+  </div>
+  <router-outlet></router-outlet>
   <!-- (2) Make a Dropdownlist that displays the categories (Use structural directive *ngFor). -->
   <select>
     <option *ngFor="let category of CategoryList" [value]="category.ID">

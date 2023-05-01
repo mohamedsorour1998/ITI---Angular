@@ -10,6 +10,12 @@
         <div class="card-footer">
           <small class="text-muted">ID: {{ post.id }}</small>
         </div>
+        <button
+          (click)="viewComments(post)"
+          class="btn btn-secondary"
+        >
+          View Comments
+        </button>
       </div>
     </div>
   </div>

@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { UsersComponent } from './users/users.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PostsComponent } from './posts/posts.component';
+import { CommentsComponent } from './comments/comments.component';
+import { ProductsWithDiscountComponent } from './products-with-discount/products-with-discount.component';
+import { ProductsWithoutDiscountComponent } from './products-without-discount/products-without-discount.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { PostsComponent } from './posts/posts.component';
     HomeComponent,
     UsersComponent,
     PostsComponent,
+    CommentsComponent,
+    ProductsWithDiscountComponent,
+    ProductsWithoutDiscountComponent,
   ],
   imports: [
     BrowserModule,
