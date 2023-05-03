@@ -1,0 +1,35 @@
+Lab Assignments:-
+---------------------
+1- using Reactive Forms, In your header.html add a two links register and login to the exsiting header
+    register will open register form with the following fields
+      -ussr name
+      -email
+      -password
+      -confirm password
+      -where you hear about us as drop down list contains (facebook -twitter , google)
+     -register button
+  
+  login will open login form with the following fields
+     -email
+     -password
+     -login button
+     -date created 
+
+in the previous two assignments according to the two forms
+    a-make all fileds requierd.
+    b-provide visulal feedback for all validations.
+    c-display error message for every validation.
+    d-the user name must also contains only capital and small characters.
+    e-email input must contains @ and . in the format (aaa@bb.com)
+    f-display error message for each kind of validations
+   g-make form level validation by making the button disabled and when the form is not valid its color become red
+      and when valid its color become green and become active.
+    h- make a custom validarot folder in it make a file that will have custom function to validate if passward is the same as confirm passward
+2-Make a page called notes:
+   -in this page make a form contains the following filds
+    -Name which is required and not allow to be admin or adminstrator.
+    -Drop down to select product you want.
+    -Check box (Does this product containd discount).
+    if checkbox checked then a number input appears which is required 
+    (write discount value in percent).   
+    -Add another comment button when cliked add another comment.

@@ -1,0 +1,71 @@
+<div>
+  <h1>{{ StoreName | uppercase }}</h1>
+  <img [src]="StoreLogo" alt="Store Logo" />
+  <!--(4) Make an input where user enters his Name, and use two-way binding (Banana operator)
+     to bind it to “ClientName” property in the class. -->
+  <h3>Enter your name</h3>
+  <input type="text" [(ngModel)]="ClientName" />
+  <h4>Welcome {{ ClientName }}!</h4>
+  <!-- (1)	If the value of discount is: “No discount”, hide this <h3> tag (Use structural -->
+  <!-- directive *ngIf). -->
+  <ng-template #Discount>
+    <h3>
+      We offer an explicit discount of: {{ CurrentDiscount | discount }}, use it
+      dear {{ ClientName }} !
+    </h3>
+  </ng-template>
+
+  <div *ngIf="Discount !== DiscountOffer.NoDiscount; then Discount"></div>
+  <div>
+    <button routerLink="./with-discount">Products with Discount</button>
+    <button routerLink="./without-discount">Products without Discount</button>
+  </div>
+  <router-outlet></router-outlet>
+  <!-- (2) Make a Dropdownlist that displays the categories (Use structural directive *ngFor). -->
+  <select>
+    <option *ngFor="let category of CategoryList" [value]="category.ID">
+      {{ category.Name }}
+    </option>
+  </select>
+  <!--(3) Make a table the display the Products list (Use structural directive *ngFor). -->
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Image</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of ProductList">
+        <td>{{ product.ID }}</td>
+        <td>{{ product.Name }}</td>
+        <td>{{ product.Quantity }}</td>
+        <td>{{ product.Price | currency }}</td>
+        <td><img [src]="product.Img" alt="{{ product.Name }} Image" /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- (5) Make a button “Buy”, that when clicked hides the table, and shows another div
+       saying “Thanks for purchasing from our Store” + ClientName Entered. (use
+       Event binding (click), and IsPurshased  flag, and method to toggle flag value,
+         with *ngIf, to show or hide them).
+a)	Use *ngIf on the both parts that you want to show or hide.
+b)	Instead of using *ngIf twice, use *ngIf  , then, else and use ng-template to show the suitable template according to the condition (Bonus)
+Note: You can use ? after object name in expression like this: {{Product?.Name}} to check if the it’s not null first.
+ -->
+  <!-- this will make 2 new lines -->
+  <br />
+  <br />
+  <button (click)="ToggleIsPurshased()">Buy</button>
+  <div *ngIf="IsPurshased; else NotPurshased">
+    Thanks for purchasing from our Store {{ ClientName }}! we hope to see you
+    again!
+  </div>
+  <ng-template #NotPurshased>
+    <div>Not Purchased!</div>
+  </ng-template>
+</div>
