@@ -9,6 +9,7 @@ import { ProductsWithDiscountComponent } from './products-with-discount/products
 import { ProductsWithoutDiscountComponent } from './products-without-discount/products-without-discount.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { NotesComponent } from './notes/notes.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, // Add this
@@ -26,6 +27,7 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'notes', component: NotesComponent },
 ];
 
 @NgModule({
